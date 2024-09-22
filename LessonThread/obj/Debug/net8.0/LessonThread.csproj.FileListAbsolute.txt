@@ -12,3 +12,4 @@ D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\refint\LessonThr
 D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.pdb
 D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.genruntimeconfig.cache
 D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\ref\LessonThread.dll
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.sourcelink.json
