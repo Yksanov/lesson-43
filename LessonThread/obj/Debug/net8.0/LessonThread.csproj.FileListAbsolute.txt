@@ -1,0 +1,14 @@
+D:\Attractor\month#2\LessonThread\LessonThread\bin\Debug\net8.0\LessonThread.exe
+D:\Attractor\month#2\LessonThread\LessonThread\bin\Debug\net8.0\LessonThread.deps.json
+D:\Attractor\month#2\LessonThread\LessonThread\bin\Debug\net8.0\LessonThread.runtimeconfig.json
+D:\Attractor\month#2\LessonThread\LessonThread\bin\Debug\net8.0\LessonThread.dll
+D:\Attractor\month#2\LessonThread\LessonThread\bin\Debug\net8.0\LessonThread.pdb
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.GeneratedMSBuildEditorConfig.editorconfig
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.AssemblyInfoInputs.cache
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.AssemblyInfo.cs
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.csproj.CoreCompileInputs.cache
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.dll
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\refint\LessonThread.dll
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.pdb
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\LessonThread.genruntimeconfig.cache
+D:\Attractor\month#2\LessonThread\LessonThread\obj\Debug\net8.0\ref\LessonThread.dll
