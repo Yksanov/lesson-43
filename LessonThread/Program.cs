@@ -30,7 +30,7 @@ class Program
         GoingToWork();
     }
     
-    static void  WakeupAndSleep()
+    static void WakeupAndSleep()
     {
         Console.WriteLine("Просыпается и лежит в кровати");
         Thread.Sleep(1500);
@@ -38,20 +38,29 @@ class Program
     
     static void PutsTheKettle()
     {
-        Console.WriteLine("Ставит чайник на плиту");
-        Thread.Sleep(500);
+        Task task2 = Task.Run(() =>
+        {
+            Console.WriteLine("Ставит чайник на плиту");
+            Task.Delay(500);
+        });
     }
     
     static void Reheatsdinner()
     {
-        Console.WriteLine("Подогревает вчерашний ужин");
-        Thread.Sleep(500);
+        Task task3 = Task.Run(() =>
+        {
+            Console.WriteLine("Подогревает вчерашний ужин");
+            Task.Delay(500);
+        });
     }
     
     static void TakingAbath()
     {
-        Console.WriteLine("Набирает ванну");
-        Thread.Sleep(1000);
+        Task task4 = Task.Run(() =>
+        {
+            Console.WriteLine("Набирает ванну");
+            Task.Delay(1000);
+        });
     }
     
     static void SwimABath()
@@ -62,8 +71,11 @@ class Program
     
     static void HavingBreakfast()
     {
-        Console.WriteLine("Завтракает"); 
-        Thread.Sleep(1000);
+        Task task5 = Task.Run(() =>
+        {
+            Console.WriteLine("Завтракает");
+            Task.Delay(1000);
+        });
     }
     static void GettingDressed()
     {
