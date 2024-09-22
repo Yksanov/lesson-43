@@ -5,86 +5,73 @@ namespace LessonThread;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        Thread th = new Thread(LifeVasya);
         Console.WriteLine("Сотрудник Вася просыпается в 07:30"); 
         Stopwatch timer = new Stopwatch();
-        timer.Start();
-        th.Start();       // Запуск потока
-        th.Join();       // Ожидание потока Васи
+        timer.Start();    // Ожидание потока Васи
+        await LifeVasya();
         timer.Stop();   // Остоновка таймера
         Console.WriteLine("Сотрудник Вася на работе");
         Console.WriteLine($"Времени потрачено: {timer.ElapsedMilliseconds / 100} минут");
     }
     
-    static void LifeVasya()
+    static async Task LifeVasya()
     {
-        WakeupAndSleep();
-        PutsTheKettle();
-        Reheatsdinner();
-        TakingAbath();
-        SwimABath();
-        HavingBreakfast();
-        GettingDressed();
-        GoingToWork();
+        await WakeupAndSleep();
+        Task t2 = PutsTheKettle();
+        Task t3 = Reheatsdinner();
+        Task t4 = TakingAbath();
+        await Task.WhenAll(t2, t3, t4);
+        await SwimABath();
+        await HavingBreakfast();
+        await GettingDressed();
+        await GoingToWork();
     }
     
-    static void WakeupAndSleep()
+    static async Task WakeupAndSleep()
     {
         Console.WriteLine("Просыпается и лежит в кровати");
-        Thread.Sleep(1500);
+        await Task.Delay(1500);
     }
     
-    static void PutsTheKettle()
+    static async Task PutsTheKettle()
     {
-        Task task2 = Task.Run(() =>
-        {
-            Console.WriteLine("Ставит чайник на плиту");
-            Task.Delay(500);
-        });
+        Console.WriteLine("Ставит чайник на плиту"); 
+        await Task.Delay(500);
     }
     
-    static void Reheatsdinner()
+    static async Task Reheatsdinner()
     {
-        Task task3 = Task.Run(() =>
-        {
-            Console.WriteLine("Подогревает вчерашний ужин");
-            Task.Delay(500);
-        });
+        Console.WriteLine("Подогревает вчерашний ужин");
+        await Task.Delay(500);
     }
     
-    static void TakingAbath()
+    static async Task TakingAbath()
     {
-        Task task4 = Task.Run(() =>
-        {
-            Console.WriteLine("Набирает ванну");
-            Task.Delay(1000);
-        });
+        Console.WriteLine("Набирает ванну");
+        await Task.Delay(1000);
     }
     
-    static void SwimABath()
+    static async Task SwimABath()
     { 
         Console.WriteLine("Принимает ванну");
-        Thread.Sleep(1500);
+        await Task.Delay(1500);
     }
     
-    static void HavingBreakfast()
+    static async Task HavingBreakfast()
     {
-        Task task5 = Task.Run(() =>
-        {
-            Console.WriteLine("Завтракает");
-            Task.Delay(1000);
-        });
+        Console.WriteLine("Завтракает");
+        await Task.Delay(1000);
     }
-    static void GettingDressed()
+    static async Task GettingDressed()
     {
         Console.WriteLine("Одевается");
-        Thread.Sleep(500);
+        await Task.Delay(500);
     }
-    static void GoingToWork()
+    static async Task GoingToWork()
     {
         Console.WriteLine("Едет на работу");
-        Thread.Sleep(5500);
+        await Task.Delay(5500);
     }
 }
