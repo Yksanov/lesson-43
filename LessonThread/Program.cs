@@ -20,7 +20,7 @@ class Program
     
     static void LifeVasya()
     {
-        WakeupAndSleep().Wait();
+        WakeupAndSleep();
         Task t2 = PutsTheKettle();
         Task t3 = Reheatsdinner();
         Task t4 = TakingAbath();
