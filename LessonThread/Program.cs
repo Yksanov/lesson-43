@@ -5,28 +5,31 @@ namespace LessonThread;
 
 class Program
 {
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Сотрудник Вася просыпается в 07:30"); 
+        Console.WriteLine("Сотрудник Вася просыпается в 07:30");
+        Thread thread = new Thread(LifeVasya);
         Stopwatch timer = new Stopwatch();
         timer.Start();    // Ожидание потока Васи
-        await LifeVasya();
+        thread.Start();
+        thread.Join();
         timer.Stop();   // Остоновка таймера
         Console.WriteLine("Сотрудник Вася на работе");
         Console.WriteLine($"Времени потрачено: {timer.ElapsedMilliseconds / 100} минут");
     }
     
-    static async Task LifeVasya()
+    static void LifeVasya()
     {
-        await WakeupAndSleep();
+        WakeupAndSleep().Wait();
         Task t2 = PutsTheKettle();
         Task t3 = Reheatsdinner();
         Task t4 = TakingAbath();
-        await Task.WhenAll(t2, t3, t4);
-        await SwimABath();
-        await HavingBreakfast();
-        await GettingDressed();
-        await GoingToWork();
+        Task.WaitAll(t2, t3);
+        HavingBreakfast().Wait();
+        t4.Wait();
+        SwimABath().Wait();
+        GettingDressed().Wait();
+        GoingToWork().Wait();
     }
     
     static async Task WakeupAndSleep()
